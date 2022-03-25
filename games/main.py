@@ -27,7 +27,8 @@ def random_predict(number: int = 1) -> int:
             max  = number_predict # Запишем максимальное значение
             number_predict = int((max + min) / 2) #  И снова половиним угадываемое число
             #  Повторим цикл еще раз            
-            while number != number_predict:    
+            while number != number_predict: 
+                count += 1  # Увеличиваем счетчик попыток на 1   
                 if number > number_predict:
                     min = number_predict
                     number_predict = int((max + min) / 2)                    
@@ -36,6 +37,7 @@ def random_predict(number: int = 1) -> int:
                     number_predict = int((max + min) / 2)                    
                     # И еще раз повторим
                     while number != number_predict:
+                        count += 1  # Увеличиваем счетчик попыток на 1
                         if number > number_predict:
                             min = number_predict
                             number_predict = int((max + min) / 2)                            
@@ -44,6 +46,7 @@ def random_predict(number: int = 1) -> int:
                             number_predict = int((max + min) / 2)                            
                             # И здесь повторим
                             while number != number_predict:
+                                count += 1  # Увеличиваем счетчик попыток на 1
                                 if number > number_predict:
                                     min = number_predict
                                     number_predict = int((max + min) / 2)                                                                        
@@ -52,6 +55,7 @@ def random_predict(number: int = 1) -> int:
                                     number_predict = int((max + min) / 2)                                    
                                     #  И здесь 
                                     while number != number_predict:
+                                        count += 1  # Увеличиваем счетчик попыток на 1
                                         if number > number_predict:
                                             min = number_predict
                                             number_predict = int((max + min) / 2)                                                                                
@@ -60,6 +64,7 @@ def random_predict(number: int = 1) -> int:
                                             number_predict = int((max + min) / 2)                                            
                                             #  аналогично как и выше 
                                             while number != number_predict:
+                                                count += 1  # Увеличиваем счетчик попыток на 1
                                                 if number > number_predict:
                                                     min = number_predict
                                                     number_predict = int((max + min) / 2)                                                                                        
