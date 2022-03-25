@@ -2,7 +2,7 @@
 Компьютер сам загадывает и сам угадывает число
 """
 
-from tkinter import N
+
 import numpy as np
 
 
@@ -15,11 +15,11 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    count = 1
-    min, max = 1, 101
-    number_predict = int(max / 2)
+    count = 1 # Объявим счетчик (будим считать кол-во попыток)
+    min, max = 1, 101 # Определим минимум и максимум
+    number_predict = int(max / 2) # Угадываемое число - максимальное значение делим по полам
     
-    
+    # 
     while number != number_predict:
         
         count += 1           
@@ -30,58 +30,48 @@ def random_predict(number: int = 1) -> int:
         elif number < number_predict:
             max  = number_predict
             number_predict = int((max + min) / 2)
-            
+                        
             while number != number_predict:    
                 if number > number_predict:
                     min = number_predict
-                    number_predict = int((max + min) / 2)
-                    print(number_predict)
+                    number_predict = int((max + min) / 2)                    
                 elif number <number_predict:
                     max = number_predict
-                    number_predict = int((max + min) / 2)
-                    print(number_predict)
+                    number_predict = int((max + min) / 2)                    
                     
                     while number != number_predict:
                         if number > number_predict:
                             min = number_predict
-                            number_predict = int((max + min) / 2)
-                            print(number_predict)
+                            number_predict = int((max + min) / 2)                            
                         elif number < number_predict:
                             max = number_predict
-                            number_predict = int((max + min) / 2)
-                            print(number_predict)
+                            number_predict = int((max + min) / 2)                            
                             
                             while number != number_predict:
                                 if number > number_predict:
                                     min = number_predict
-                                    number_predict = int((max + min) / 2)
-                                    print(number_predict)                                    
+                                    number_predict = int((max + min) / 2)                                                                        
                                 elif number <number_predict:
                                     max = number_predict
-                                    number_predict = int((max + min) / 2)
-                                    print(number_predict)
+                                    number_predict = int((max + min) / 2)                                    
                                     
                                     while number != number_predict:
                                         if number > number_predict:
                                             min = number_predict
-                                            number_predict = int((max + min) / 2)
-                                            print(number_predict)                                    
+                                            number_predict = int((max + min) / 2)                                                                                
                                         elif number <number_predict:
                                             max = number_predict
-                                            number_predict = int((max + min) / 2)
-                                            print(number_predict)
+                                            number_predict = int((max + min) / 2)                                            
                                             
                                             while number != number_predict:
                                                 if number > number_predict:
                                                     min = number_predict
-                                                    number_predict = int((max + min) / 2)
-                                                    print(number_predict)                                    
+                                                    number_predict = int((max + min) / 2)                                                                                        
                                                 elif number < number_predict:
                                                     max = number_predict
                                                     number_predict = int((max + min) / 2)
-                                                    print(number_predict)
-                                                if number_predict == 2:
-                                                    break
+                                                    
+                                                
                    
     return count
 
@@ -103,7 +93,7 @@ def score_game(random_predict) -> int:
         count_ls.append(random_predict(number))
 
     score = int(np.mean(count_ls))
-    print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
+    print(f"Ваш алгоритм угадывает число в среднем за: {score} попыток")
     return score
 
 
