@@ -87,10 +87,14 @@ def score_game(random_predict) -> int:
     random_array = np.random.randint(1, 101, size=(1000))  # загадали список чисел
     #  При каждой итэрации будем добовлять загаданное число в список count_ls
     for number in random_array:
-        count_ls.append(random_predict(number)) 
+        count_ls.append(random_predict(number))
+        
 
     score = int(np.mean(count_ls)) # Запишем среднее значение
     print(f"Ваш алгоритм угадывает число в среднем за: {score} попыток")
+    
+    
+    
     return score
 
 
