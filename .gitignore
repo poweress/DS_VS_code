@@ -1,6 +1,4 @@
 .idea
-/data/
-/plotly/
-.ipynb_checkpoints/
-.vscode/
-.venv/
+.ipynb_checkpoints
+.vscode
+.venv
